@@ -24,9 +24,10 @@ app.set('view engine','hbs');
 app.get('/', function (req, res) {
 
     let dataView = {
-        nombre: "Brian Montenegro",
+        nombre: "Brian",
         anio: new Date().getFullYear(),
-        url: req.url
+        url: req.url,
+        TituloPage:'Home'
     };
     let nombre='Brian Montenegro';
       res.render('home',dataView);
