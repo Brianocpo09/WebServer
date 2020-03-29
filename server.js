@@ -13,7 +13,7 @@
 /**Instancia el paquete del servidor */
 const express = require('express')
 const app = express()
-const port= process.env.port || 3000 ;
+const port= process.env.PORT || 3000 ;
 /**Permite especificar la carpeta publica que tendrán acceso todos los usuarios */
 app.use(express.static(__dirname+'/public'));
 /**Express HBS config*/
@@ -34,5 +34,5 @@ app.get('/', function (req, res) {
 })
  
 app.listen(port, ()=>{
-    console.log(`Escuchando peticiones en el puerto 3000 ${port}`);
+    console.log(`Escuchando peticiones en el puerto ${port}`);
 })
