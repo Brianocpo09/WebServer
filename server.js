@@ -13,6 +13,13 @@
 /**Instancia el paquete del servidor */
 const express = require('express')
 const app = express()
+/** Este comando para buscar el puerto rocess.env.PORT solo nos sirve en el momento de desplegar la aplicacion
+ * en Heroku un servicio gratuito para subir nuestra aplicacion node
+ *  Pasos para desplegar aplicacion
+ *  1- crear la constante del puerto y en el packege.json insertar la instruccion de start para el despliege de nuestro servidor
+ *  2- crear una cuenta en heroku 
+ *  3- crear nueva aplicacion en heroku, una ves creado muestra una serie pasos que se deben segir para subir nuestro proyecto.
+ */
 const port= process.env.PORT || 3000 ;
 /**Permite especificar la carpeta publica que tendrán acceso todos los usuarios */
 app.use(express.static(__dirname+'/public'));
