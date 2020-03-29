@@ -4,14 +4,17 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start":"node server.js",
-    "nodemon":"nodemon server.js",
+    "start": "node server.js",
+    "nodemon": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Brian Montenegro",
   "license": "ISC",
   "dependencies": {
+    "@popperjs/core": "^2.1.1",
+    "bootstrap": "^4.4.1",
     "express": "^4.17.1",
-    "hbs": "^4.1.0"
+    "hbs": "^4.1.0",
+    "jquery": "^3.4.1"
   }
 }

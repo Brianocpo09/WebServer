@@ -5,8 +5,11 @@
  *  */
 
 /**Instalaciones 
- * npm install express --save
- * nom install hbs    permite manejar VIEWS y renderizar  se necesita instalar hbs y configurar
+ *  npm install express --save
+ *  npm install hbs    permite manejar VIEWS y renderizar  se necesita instalar hbs y configurar
+ *  npm install bootstrap
+ *  npm install jquery
+ *  npm i @popperjs/core
 */
 
 
@@ -27,6 +30,13 @@ app.use(express.static(__dirname+'/public'));
 const hbs = require('hbs')
 hbs.registerPartials(__dirname+'/views/parciales');
 app.set('view engine','hbs');
+/**Bootstrap */
+// Bootstrap 4 y librerías necesarias
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/js', express.static(__dirname + '/node_modules/@popperjs/core/dist/umd'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+
 /**Permite capturar las peticiones según el path especificado */
 app.get('/', function (req, res) {
 
