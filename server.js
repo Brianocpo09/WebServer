@@ -28,8 +28,17 @@ const port= process.env.PORT || 3000 ;
 app.use(express.static(__dirname+'/public'));
 /**Express HBS config*/
 const hbs = require('hbs')
+/**resgistramos las parciales de mis views - vistas  como son el nav, footer, head */
 hbs.registerPartials(__dirname+'/views/parciales');
 app.set('view engine','hbs');
+
+/**Helpers
+ * permite guardar funciones que pueden ser utilizadas de forma global
+ * los helpers se encuentran en el directorio requerido
+ */
+require('./hbs/helpers')
+
+
 /**Bootstrap */
 // Bootstrap 4 y librerías necesarias
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
