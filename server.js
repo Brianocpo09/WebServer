@@ -36,7 +36,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/js', express.static(__dirname + '/node_modules/@popperjs/core/dist/umd'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
-
+app.use('/mycss', express.static(__dirname + '/public/assets/css'));
 /**Permite capturar las peticiones según el path especificado */
 app.get('/', function (req, res) {
 
@@ -48,6 +48,18 @@ app.get('/', function (req, res) {
     };
     let nombre='Brian Montenegro';
       res.render('home',dataView);
+})
+
+app.get('/acerca', function (req, res) {
+
+    let dataView = {
+        nombre: "Brian",
+        anio: new Date().getFullYear(),
+        url: req.url,
+        TituloPage:'Home'
+    };
+    let nombre='Brian Montenegro';
+      res.render('acerca',dataView);
 })
  
 app.listen(port, ()=>{
